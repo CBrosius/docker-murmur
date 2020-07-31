@@ -1,5 +1,13 @@
 ## Description
 
+This is my personal fork of the docker-container for a Mumble-Server (murmur) based on https://github.com/Zalkeen/docker-murmur
+I had a few issues with the original one as I got a exec-error when just pulling zalkeen\murmur instead of zalkeen\murmur_1.3.0-armhf and
+the sqlite-db was not build automatically when I tried out this image.
+
+So my fork tries to fix this for my personal use, but maybe is usable for others, too.
+
+
+
 This is a barebones Docker container built using Alpine.
 
 It's configured to look for the configuration file in `/etc/murmur.ini`.
@@ -9,14 +17,14 @@ It's configured to look for the configuration file in `/etc/murmur.ini`.
 The recommended way to run this container is as follows:
 
 ```bash
-$ docker run -d -p 64738:64738 -p 64738:64738/udp zalkeen/murmur
+$ docker run -d -p 64738:64738 -p 64738:64738/udp cbrosius/murmur
 ```
 
 To have the container store the sqlite database on your filesystem instead, you can run:
 
 ```bash
 $ docker run -d -p 64738:64738 -p 64738:64738/udp \
-    -v /path/to/data:/data zalkeen/murmur
+    -v /path/to/data:/data cbrosius/murmur
 ```
 
 ## Important notes
@@ -48,6 +56,6 @@ To run the container with your tweaked murmur.ini:
 
 ```bash
 $ docker run -d -p 64738:64738 -p 64738:64738/udp \
-    -v /path/to/murmur.ini:/etc/murmur.ini zalkeen/murmur
+    -v /path/to/murmur.ini:/etc/murmur.ini cbrosius/murmur
 ```
 
