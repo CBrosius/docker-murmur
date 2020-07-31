@@ -1,14 +1,14 @@
 image: cbrosius/murmur:latest
 manifests:
-  # - image: cbrosius/murmur:latest-amd64
-  #   platform:
-  #     architecture: amd64
-  #     os: linux
-  # - image: cbrosius/murmur:latest-arm64v8
-  #   platform:
-  #     architecture: arm64
-  #     os: linux
-  #     variant: v8
+  - image: cbrosius/murmur:latest-amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: cbrosius/murmur:latest-arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
   - image: cbrosius/murmur:latest-arm32v7
     platform:
       architecture: arm

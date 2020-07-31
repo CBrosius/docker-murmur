@@ -1,14 +1,9 @@
-FROM alpine:3.11
-MAINTAINER Grim Kriegor <grimkriegor@krutt.org>
+FROM alpine:latest
 
-ENV VERSION 1.3.0-r4
-
-RUN apk update \
-    && apk add murmur=${VERSION} \
-    && rm -rf /var/cache/apk/*
-
-RUN cp /etc/murmur.ini /etc/murmur.ini.sample \
-  && sed -i 's|\(^database=\).*|\1/data/murmur.sqlite|g' /etc/murmur.ini*
+RUN apk update && apk upgrade && \
+    apk add --update murmur && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm /var/cache/apk/*
 
 ADD entrypoint.sh \
   /entrypoint.sh
