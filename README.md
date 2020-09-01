@@ -37,4 +37,6 @@ On first run, if you don't already have an existing state database, you'll want 
 $ docker logs murmur 2>&1 | grep Password
 ```
 
+## Changelog
 
+2020/09/01 - Update Sources
